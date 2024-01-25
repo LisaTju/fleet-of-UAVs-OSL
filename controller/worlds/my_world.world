@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+ <world name="my_world">
+  <include>
+    <uri>model://sun</uri>
+  </include>
+  <include>
+    <uri>model://my_chair</uri>
+    <name>simple_chair</name>
+    <pose>0 0 0 0 0 0</pose>
+  </include>
+ </world>
+</sdf>
+

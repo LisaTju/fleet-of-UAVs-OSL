@@ -1,0 +1,37 @@
+<!-- Mission file for GADEN preprocessing
+    ROS - KINETIC
+-->
+
+<launch>
+    <arg name="scenario" default="outdoor_space" />
+    
+    <node pkg="gaden_preprocessing" type="preprocessing" name="preprocessing" output="screen">
+     
+        #Cell size
+        <param name="cell_size" value="0.5"/>    
+        
+        #CAD models of the enviroment (.stl)
+        <param name="number_of_models" value="5"/>
+        <param name="model_0" value="/home/lisa/ESC_OSL/src/gaden/test_env/outdoor_space/cad_models/building1.stl"/>
+        <param name="model_1" value="/home/lisa/ESC_OSL/src/gaden/test_env/outdoor_space/cad_models/building2.stl"/>
+        <param name="model_2" value="/home/lisa/ESC_OSL/src/gaden/test_env/outdoor_space/cad_models/outlet.stl"/>
+        <param name="model_3" value="/home/lisa/ESC_OSL/src/gaden/test_env/outdoor_space/cad_models/wall1.stl"/>
+        <param name="model_4" value="/home/lisa/ESC_OSL/src/gaden/test_env/outdoor_space/cad_models/wall2.stl"/>
+    
+        #CAD model of the outlets (.stl)
+        <param name="number_of_outlet_models" value="1"/>
+        <param name="outlets_model_0" value="/home/lisa/ESC_OSL/src/gaden/test_env/outdoor_space/cad_models/inlet.stl"/>
+    
+        #3D Location of a point in free-space
+        <param name="empty_point_x" value="1.0"/>      ### (m)
+        <param name="empty_point_y" value="1.0"/>      ### (m)
+        <param name="empty_point_z" value="0.5"/>      ### (m)
+            
+        #Wind Data (the node will append _i.csv to the name that is specified here)
+       <!--
+          <p  name="wind_files" value="/home/lisa/ESC_OSL/src/gaden/test_env/outdoor_space/winddata/air_flow_sim"/>-->
+          <param name="wind_files" value="/home/lisa/ESC_OSL/src/gaden/test_env/outdoor_space/wind/wind_sim"/>
+        #Where to write the output files
+        <param name="output_path" value="$(find test_env)/$(arg scenario)" />
+    </node>
+</launch>

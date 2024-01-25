@@ -1,0 +1,18 @@
+material outdoor_space/building 
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+       texture_unit
+         {
+          texture foundtexturestone1-carrielewis.jpg
+                scale 1 1
+         }
+    }
+  }
+}
+
+
+   

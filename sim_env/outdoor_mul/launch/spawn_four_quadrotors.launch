@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+ <!--<** the spawn_quadrotor is modified according to this project requiement please keep in mind if you clone hector quadrotor repository directly**** -->
+<launch>
+   <arg name="model" default="$(find hector_quadrotor_description)/urdf/quadrotor_hokuyo_utm30lx.gazebo.xacro"/> 
+  <arg name="GasType" default="1" />
+   <!--<***************************robot_0 with tdlas sensor*************************************** -->
+   <group ns="robot_0">
+     <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+       <arg name="name" value="robot_0" />
+       <arg name="tf_prefix" value="robot_0" />
+       <arg name="model" value="$(arg model)" />
+       <arg name="x" value="17.0" />
+       <arg name="y" value="19.0" />
+     </include>
+
+<!--
+        <node pkg="simulated_tdlas" type="simulated_tdlas" name="fake_tdlas" args="0" output="screen">
+        <param name="/sensor_model" value="2" />
+         <param name="tf_prefix" value="robot_0" />
+        <param name="/sensor_frame" value="robot_0/tdlas_frame" />
+        <param name="/fixed_frame" value="map"/>
+        <param name="/noise_std" value="20.1"/>
+         <param name="/gas_type" value="$(arg GasType)"/>
+          </node> -->
+
+    <node pkg="simulated_gas_sensor" type="simulated_gas_sensor" name="fake_pid" output="screen">
+        <param name="/sensor_model" value="30" />
+        <param name="tf_prefix" value="robot_0" />
+        <param name="/sensor_frame" value="robot_0/tdlas_frame" />
+        <param name="/fixed_frame" value="map"/>
+        <param name="/noise_std" value="20.1"/>
+    </node>
+
+
+   </group>
+  <node pkg="tf" type="static_transform_publisher" name="pid_broadcaster" args="0.0 0.0 -0.1 0 0 300 robot_0/base_link robot_0/tdlas_frame 100" />
+  
+    <node pkg="tf" type="static_transform_publisher" name="map_to_base" args="0 0 0 0 0 0 map robot_0/world 100" />
+
+
+ <!--<***************************robot_1 with tdlas sensor*************************************** -->
+
+   <group ns="robot_1">
+     <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+       <arg name="name" value="robot_1" />
+       <arg name="tf_prefix" value="robot_1" />
+       <arg name="model" value="$(arg model)" />
+      <arg name="x" value="16.0" />
+      <arg name="y" value="-10" />
+     </include>
+ <!--
+      <node pkg="simulated_tdlas" type="simulated_tdlas" name="fake_tdlas1" args="1" output="screen">
+        <param name="/sensor_model" value="2" />
+         <param name="tf_prefix" value="robot_1" />
+        <param name="/sensor_frame" value="robot_1/tdlas_frame" />
+        <param name="/fixed_frame" value="map"/>
+        <param name="/noise_std" value="20.1"/>
+        <param name="/gas_type" value="$(arg GasType)"/>
+          </node> -->
+
+    <node pkg="simulated_gas_sensor" type="simulated_gas_sensor" name="fake_pid" output="screen">
+        <param name="/sensor_model" value="30" />
+        <param name="tf_prefix" value="robot_1" />
+        <param name="/sensor_frame" value="robot_1/tdlas_frame" />
+        <param name="/fixed_frame" value="map"/>
+        <param name="/noise_std" value="20.1"/>
+    </node>
+
+   </group>
+  <node pkg="tf" type="static_transform_publisher" name="pid_broadcaster1" args="0.0 0.0 -0.1 0 0 300 robot_1/base_link robot_1/tdlas_frame 100" />
+     <!-- <node pkg="tf" type="static_transform_publisher" name="tdlas_broadcaster1" args="0.0 0.0 -0.1 0 0 300 robot_1/base_link robot_1/tdlas_frame 100" />  -->
+     <node pkg="tf" type="static_transform_publisher" name="map_to_base2" args="0 0 0 0 0 0 map robot_1/world 100" />
+
+
+ <!--<***************************robot_2 with tdlas sensor*************************************** -->
+
+   <group ns="robot_2">
+     <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+       <arg name="name" value="robot_2" />
+       <arg name="tf_prefix" value="robot_2" />
+       <arg name="model" value="$(arg model)" />
+       <arg name="x" value="18.0" />
+       <arg name="y" value="-8.0" />
+     </include>
+
+    <!--  <node pkg="simulated_tdlas" type="simulated_tdlas" name="fake_tdlas2" args="2" output="screen">
+        <param name="/sensor_model" value="2" />
+         <param name="tf_prefix" value="robot_2" />
+        <param name="/sensor_frame" value="robot_2/tdlas_frame" />
+        <param name="/fixed_frame" value="map"/>
+        <param name="/noise_std" value="20.1"/>
+         <param name="/gas_type" value="$(arg GasType)"/>
+          </node>-->
+    <node pkg="simulated_gas_sensor" type="simulated_gas_sensor" name="fake_pid" output="screen">
+        <param name="/sensor_model" value="30" />
+        <param name="tf_prefix" value="robot_2" />
+        <param name="/sensor_frame" value="robot_2/tdlas_frame" />
+        <param name="/fixed_frame" value="map"/>
+        <param name="/noise_std" value="20.1"/>
+    </node>
+   </group>
+ <node pkg="tf" type="static_transform_publisher" name="pid_broadcaster2" args="0.0 0.0 -0.1 0 0 300 robot_2/base_link robot_2/tdlas_frame 100" />
+  
+     <node pkg="tf" type="static_transform_publisher" name="map_to_base3" args="0 0 0 0 0 0 map robot_2/world 100" />
+
+
+
+    <!--<***************************robot_3 with tdlas sensor*************************************** -->
+
+   <group ns="robot_3">
+     <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+       <arg name="name" value="robot_3" />
+       <arg name="tf_prefix" value="robot_3" />
+       <arg name="model" value="$(arg model)" />
+       <arg name="x" value="15.0" />
+       <arg name="y" value="15" />
+     </include>
+  <!--  <node pkg="simulated_tdlas" type="simulated_tdlas" name="fake_tdlas3" args="3" output="screen">
+        <param name="/sensor_model" value="2" />
+         <param name="tf_prefix" value="robot_3" />
+        <param name="/sensor_frame" value="robot_3/tdlas_frame" />
+        <param name="/fixed_frame" value="map"/>
+        <param name="/noise_std" value="20.1"/>
+         <param name="/gas_type" value="$(arg GasType)"/>
+          </node> -->
+    <node pkg="simulated_gas_sensor" type="simulated_gas_sensor" name="fake_pid" output="screen">
+        <param name="/sensor_model" value="30" />
+        <param name="tf_prefix" value="robot_3" />
+        <param name="/sensor_frame" value="robot_3/tdlas_frame" />
+        <param name="/fixed_frame" value="map"/>
+        <param name="/noise_std" value="20.1"/>
+    </node>
+   </group>
+      <node pkg="tf" type="static_transform_publisher" name="pid_broadcaster3" args="0.0 0.0 -0.1 0 0 300 robot_3/base_link robot_3/tdlas_frame 100" />
+     <!-- <node pkg="tf" type="static_transform_publisher" name="tdlas_broadcaster3" args="0.0 0.0 -0.1 0 0 300 robot_3/base_link robot_3/tdlas_frame 100" />-->
+      <node pkg="tf" type="static_transform_publisher" name="map_to_base4" args="0 0 0 0 0 0 map robot_3/world 100" />
+</launch>

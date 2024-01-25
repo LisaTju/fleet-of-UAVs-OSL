@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<launch>
+<node name="fly_0" pkg="controller" type="fly_space" args="0" output="screen"/>
+<node name="fly_1" pkg="controller" type="fly_space" args="1" output="screen"/>
+<node name="fly_2" pkg="controller" type="fly_space" args="2" output="screen"/>
+<node name="fly_3" pkg="controller" type="fly_space" args="3" output="screen"/>
+
+
+
+<!--
+<node name="data_0" pkg="controller" type="sensor_data" args="0" output="screen"/>
+<node name="data_1" pkg="controller" type="sensor_data" args="1" output="screen"/>
+<node name="data_2" pkg="controller" type="sensor_data" args="2" output="screen"/>
+<node name="data_3" pkg="controller" type="sensor_data" args="3" output="screen"/>
+
+<node name="client_0" pkg="controller" type="obstacalclient" args="0" output="screen"/>
+<node name="client_1" pkg="controller" type="obstacalclient" args="1" output="screen"/>
+<node name="client_2" pkg="controller" type="obstacalclient" args="2" output="screen"/>
+<node name="client_3" pkg="controller" type="obstacalclient" args="3" output="screen"/>
+
+
+
+<node name="pso1" pkg="TestSCDSPSO" type="testscdspso" args="0" output="screen"/>
+<node name="listener_0" pkg="controller" type="listener" args="0" output="screen"/>
+<node name="listener_1" pkg="controller" type="listener" args="1" output="screen"/>
+<node name="listener_2" pkg="controller" type="listener" args="2" output="screen"/>
+<node name="listener_3" pkg="controller" type="listener" args="3" output="screen"/>
+-->
+
+<!--
+<node name="pose_0" pkg="controller" type="drone_pose" args="0" output="screen"/>
+<node name="pose_1" pkg="controller" type="drone_pose" args="1" output="screen"/>
+<node name="pose_2" pkg="controller" type="drone_pose" args="2" output="screen"/>
+<node name="pose_3" pkg="controller" type="drone_pose" args="3" output="screen"/> -->
+
+</launch>

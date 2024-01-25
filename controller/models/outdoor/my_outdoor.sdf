@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<sdf version="1.5">
+ <model name="my_outdoor">
+   <static>true</static>
+   <link name="outdoor_surface">
+    <collision name="outdoor_collision">
+     <geometry>
+       <box>
+        <size>40 40 0.01</size>
+       </box>
+     </geometry>
+    </collision>
+
+     <visual name="surface_mesh">
+      <cast_shadows>true</cast_shadows>
+      <geometry>
+       <mesh>
+         <uri>model://outdoor/meshes/ground_surface.dae</uri>
+       </mesh>
+      </geometry>
+      <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+     </visual>
+   </link>
+
+<static>true</static>
+   <link name="outdoor_building1">
+    <collision name="building1_collision">
+     <geometry>
+       <box>
+        <size>3 3 10</size>
+       </box>
+     </geometry>
+    </collision>
+
+     <visual name="building1_mesh">
+      <cast_shadows>true</cast_shadows>
+      <geometry>
+       <mesh>
+         <uri>model://outdoor/meshes/building1.dae</uri>
+       </mesh>
+      </geometry>
+      <material>
+        <script> 
+          <uri>model://outdoor/materials/scripts</uri>
+          <uri>model://outdoor/materials/textures</uri>
+          <name>outdoor/building</name> 
+        </script>
+      </material>
+     </visual>
+   </link>
+
+<static>true</static>
+   <link name="outdoor_building2">
+    <collision name="building2_collision">
+     <geometry>
+       <box>
+        <size>3 3 10</size>
+       </box>
+     </geometry>
+    </collision>
+
+     <visual name="building2_mesh">
+      <cast_shadows>true</cast_shadows>
+      <geometry>
+       <mesh>
+         <uri>model://outdoor/meshes/building2.dae</uri>
+       </mesh>
+      </geometry>
+      <material>
+        <script> 
+          <uri>model://outdoor/materials/scripts</uri>
+          <uri>model://outdoor/materials/textures</uri>
+          <name>outdoor/building</name> 
+        </script>
+      </material>
+     </visual>
+   </link>
+
+<static>true</static>
+   <link name="outdoor_building3">
+    <collision name="building3_collision">
+     <geometry>
+       <box>
+        <size>3 3 10</size>
+       </box>
+     </geometry>
+    </collision>
+
+     <visual name="building3_mesh">
+      <cast_shadows>true</cast_shadows>
+      <geometry>
+       <mesh>
+         <uri>model://outdoor/meshes/building1.dae</uri>
+       </mesh>
+      </geometry>
+      <material>
+        <script> 
+          <uri>model://outdoor/materials/scripts</uri>
+          <uri>model://outdoor/materials/textures</uri>
+          <name>outdoor/building</name> 
+        </script>
+      </material>
+     </visual>
+   </link>
+
+  <static>true</static>
+   <link name="outdoor_building4">
+    <collision name="building4_collision">
+     <geometry>
+       <box>
+        <size>3 3 10</size>
+       </box>
+     </geometry>
+    </collision>
+
+     <visual name="building4_mesh">
+      <cast_shadows>true</cast_shadows>
+      <geometry>
+       <mesh>
+         <uri>model://outdoor/meshes/building4.dae</uri>
+       </mesh>
+      </geometry>
+      <material>
+        <script> 
+          <uri>model://outdoor/materials/scripts</uri>
+          <uri>model://outdoor/materials/textures</uri>
+          <name>outdoor/building</name> 
+        </script>
+      </material>
+     </visual>
+   </link>
+
+   <static>true</static>
+   <link name="outdoor_building5">
+    <collision name="building5_collision">
+     <geometry>
+       <box>
+        <size>3 3 10</size>
+       </box>
+     </geometry>
+    </collision>
+
+     <visual name="building5_mesh">
+      <cast_shadows>true</cast_shadows>
+      <geometry>
+       <mesh>
+         <uri>model://outdoor/meshes/building5.dae</uri>
+       </mesh>
+      </geometry>
+      <material>
+        <script> 
+          <uri>model://outdoor/materials/scripts</uri>
+          <uri>model://outdoor/materials/textures</uri>
+          <name>outdoor/building</name> 
+        </script>
+      </material>
+     </visual>
+   </link>
+
+ </model>
+</sdf>
+
+

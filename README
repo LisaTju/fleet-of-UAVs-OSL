@@ -1,0 +1,59 @@
+
+
+Note: While using this repository keep in mind the paths of the files. 
+
+1. Create new Workspace
+2. Clone the GADEN 
+       https:/github.com/MAPIRlab/gaden (ros1)
+
+3. Clone the hector quarotor package
+       https:/github.com/tu-darmstadt-ros-pkg/hector_quadrotor
+
+4. Clone the fleet-of-UAVs-OSL
+  
+   a. Replace the pakages with the packages included in (Gaden modified pakages) floder (Some instructions are included for this simulation )
+   b. Replace the pakage with the package included in ( hector quadrotor modified pakage) (Modified the spwam_quadrotor for this simulation )
+
+5. Follow the gaden instructions
+ 
+  a. run GADEN_preprocessing launch file to setup the simulation (sim_env)
+  b. run the GADEN launch file to run the gas dispersal simulation (sim_env)
+
+
+6. To run simulation  
+
+    a. roslaunch main_simbot.launch (sim_env)
+7. New terminal (enable motors) (script)
+        fleet-of-UAVs-OSL/src/script
+          ./motors_enable_uav_swarm.sh
+
+8. New terminal (controller)
+
+         cd fleet-of-UAVs-OSL/src/sim_env/outdoor_mul/launch (sim_env)
+                roslaunch fly.launch 
+
+
+Using following steps one can create his/her own envirnoment (helped from Gaden tutorials)
+
+	step1:   onshape: create geometry in onshape and export the geometry .stl and .dae formates of the geometry 
+	step2: 
+                  A: simscale : 
+                        1. import the geometry from onshape and create enclosure
+		  	2. set the simulation----incompressible (transient) 
+                  	3. set the boundary considtions 
+		  	4. create the mesh
+		  	5. set the simulation time and run the simualtion 
+                  	6. download the data .CSV files 
+                  B: Ansys Fluent 
+                      complete all the required steps and export .CVS file
+                        make it readable for the GADEN simulator
+        
+             if use simsale for windflow data follow the step 3 otherwise follow step4
+
+	step3: Openfoam: 1. open the downloaded file in paraview of openfoam (paraview)
+                 	 2. select overall mest and U opention and apply
+                 	 3. select the filer cell center and save the data 
+
+	step4: GADEN, 	1, rename the saved data using ./batch_rename.sh floder path
+              		2. run GADEN_Prepossing.launch file 
+              		3. Run GADEN.launch file 

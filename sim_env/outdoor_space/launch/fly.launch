@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+<!--<node name="fly_0" pkg="controller" type="control_space" args="0" output="screen"/>
+<node name="fly_1" pkg="controller" type="control_space" args="1" output="screen"/>
+<node name="fly_2" pkg="controller" type="control_space" args="2" output="screen"/>
+<node name="fly_3" pkg="controller" type="control_space" args="3" output="screen"/> 
+<node name="fly_4" pkg="controller" type="fly_space" args="4" output="screen"/>-->
+
+<node name="fly_0" pkg="controller" type="fly_space" args="0" output="screen"/>
+<node name="fly_1" pkg="controller" type="fly_space" args="1" output="screen"/>
+<node name="fly_2" pkg="controller" type="fly_space" args="2" output="screen"/>
+<node name="fly_3" pkg="controller" type="fly_space" args="3" output="screen"/>
+
+
+</launch>

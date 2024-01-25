@@ -1,0 +1,21 @@
+material outdoor/building 
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+       texture_unit
+         {
+          clouds_rt.jpg
+         }
+        texture_unit
+         {
+          foundtexturestone2-carrielewis.jpg
+         }
+    }
+  }
+}
+
+
+   
